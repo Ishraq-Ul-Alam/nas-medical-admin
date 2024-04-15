@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "doctors",
+  "info": {
+    "singularName": "doctor",
+    "pluralName": "doctors",
+    "displayName": "Doctor"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "StartTime": {
+      "type": "time"
+    },
+    "EndTime": {
+      "type": "time"
+    },
+    "About": {
+      "type": "blocks",
+      "required": true
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "doctor"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "mappedBy": "doctors"
+    }
+  }
+}

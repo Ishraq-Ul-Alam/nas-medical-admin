@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "appoinments",
+  "info": {
+    "singularName": "appoinment",
+    "pluralName": "appoinments",
+    "displayName": "Appoinment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "UserName": {
+      "type": "string",
+      "required": true
+    },
+    "Email": {
+      "type": "email",
+      "required": true
+    },
+    "Date": {
+      "type": "string",
+      "required": true
+    },
+    "doctor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::doctor.doctor"
+    },
+    "Time": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
